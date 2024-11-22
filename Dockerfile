@@ -1,19 +1,17 @@
 # Use a specific Python version for stability
 FROM python:3.10
 
-# Set the working directory inside the container
-WORKDIR /source
-
 # Install necessary system-level dependencies
 RUN apt-get update && apt-get install -y python3-distutils python3-apt && apt-get clean
 
-# Install Django
-RUN pip install django==3.2
+# Set the working directory inside the container
+WORKDIR /source
 
 # Copy application files into the container
 COPY . /source
 
-# Ensure the Django application has all dependencies installed (e.g., for migrations)
+# Install Django and dependencies
+RUN pip install django==3.2
 RUN pip install -r requirements.txt || true
 RUN pip install -r requirements-dev.txt || true
 
