@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt || true
 RUN pip install -r requirements-dev.txt || true
 
 # Run database migrations
-RUN python manage.py migrate
+RUN python /source/manage.py migrate
 
 # Expose the application port
 EXPOSE 8000
