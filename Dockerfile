@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y python3-distutils python3-apt && apt-ge
 RUN pip install django==3.2
 
 # Copy application files into the container
-COPY . .
+COPY . /source
 
 # Ensure the Django application has all dependencies installed (e.g., for migrations)
 RUN pip install -r requirements.txt || true
