@@ -2,7 +2,7 @@
 FROM python:3.10
 
 # Set the working directory inside the container
-WORKDIR /data
+WORKDIR /source
 
 # Install necessary system-level dependencies
 RUN apt-get update && apt-get install -y python3-distutils python3-apt && apt-get clean
