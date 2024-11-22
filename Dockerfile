@@ -22,4 +22,4 @@ RUN python manage.py migrate
 EXPOSE 8000
 
 # Start the Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "/source/manage.py", "runserver", "0.0.0.0:8000"]
